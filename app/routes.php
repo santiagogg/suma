@@ -16,4 +16,8 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::resource('eventos', 'EventosController');
+Route::group(array('before'=>'auth.basic'), function() {
+
+    Route::resource('eventos', 'EventosController');
+
+});
