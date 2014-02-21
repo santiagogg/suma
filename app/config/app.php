@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'CC7S6lYgWp6WZY4zhM8OSXFJfZQLRlmT',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -79,6 +79,7 @@ return array(
 	*/
 
 	'providers' => array(
+        'Way\Generators\GeneratorsServiceProvider',
 
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
