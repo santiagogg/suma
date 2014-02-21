@@ -21,7 +21,7 @@ class EventosController extends BaseController {
 	 */
 	public function index()
 	{
-		$eventos = $this->evento->all();
+		$eventos = $this->evento->paginate(20);
 
 		return View::make('eventos.index', compact('eventos'));
 	}

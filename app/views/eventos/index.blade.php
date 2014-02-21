@@ -36,6 +36,7 @@
 			@endforeach
 		</tbody>
 	</table>
+{{ $eventos->links()}}
 @else
 	There are no eventos
 @endif
