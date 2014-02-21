@@ -13,7 +13,12 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('landing-page');
+});
+
+Route::get('/api', function()
+{
+    return Evento::all();
 });
 
 Route::group(array('before'=>'auth.basic'), function() {
