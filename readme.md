@@ -1,21 +1,99 @@
-## Laravel PHP Framework
+#Laravel Framework
 
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework) [![License](https://poser.pugx.org/laravel/framework/license.png)](https://packagist.org/packages/laravel/framework) 
+Mantené tu código simple y disfrutá programar.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+!
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+#¿Por qué Laravel?
 
-## Official Documentation
+* Es PHP.
+* Facil de aprender.
+* Mucha Info.
+* Gran comunidad.
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+!
 
-### Contributing To Laravel
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+#Características
 
-### License
+* MVC
+* Composer / Autoloads PSR0 , PSR4
+* Basado en Simphony y otros paquetes.
+* Linea de Comandos.
+* Muy Elegante.
+* Super Escalable.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+!
+
+
+#Demo
+
+!
+
+
+#1. Instalación
+
+	Composer
+	Laravel
+	
+	php artisan key:generate / 
+	
+	config/database.php
+	
+!
+	
+
+#2. Dependencias
+
+	composer require --dev
+	"way/generators": "1.1"
+	"fzaninotto/faker": "1.4.*@dev"	
+	"barryvdh/laravel-ide-helper": "dev-master"
+	 
+!
+	 
+
+#3. Generate Scaffold
+
+	
+	php artisan generate:scaffold Events --fields="title:varchar, descripcion:text, start:datetime, end:datetime, price:int"
+	
+!
+	
+
+#4. Seeding
+	
+	
+	use Faker\Factory as Faker;
+	use Carbon\Carbon;
+
+
+!
+
+#5. Paginator
+
+	app/config/view.php
+	'pagination' => 'pagination::slider',
+	
+
+!
+	
+#6. Autenticación
+
+	php artisan generate:migration create_users_table --fields="email:string:unique, password:string"
+	
+	php artisan migrate
+	
+	php artsisan tinker
+	> $user = new User;	
+	> $user->password = Hash::make('1234');
+
+!
+
+#7. Auth.Basic
+
+
+	Route::group(array('before'=>'auth.basic'), function() {
+    	Route::resource('eventos', 'EventosController');
+    });
